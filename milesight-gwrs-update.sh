@@ -1,4 +1,4 @@
-i#!/bin/ash
+#!/bin/ash
 
 echo "Checking latest gateway-rs version..."
 latestver=$(curl https://github.com/helium/gateway-rs/releases/latest --verbose 2>&1 | grep -Eo 'v[0-9]\.[0-9]\.[0-9]' | cut -b 2-)
