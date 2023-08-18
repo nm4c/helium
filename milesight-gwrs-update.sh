@@ -1,4 +1,4 @@
-#!/bin/ash
+i#!/bin/ash
 
 echo "Checking latest gateway-rs version..."
 latestver=$(curl https://github.com/helium/gateway-rs/releases/latest --verbose 2>&1 | grep -Eo 'v[0-9]\.[0-9]\.[0-9]' | cut -b 2-)
@@ -31,4 +31,5 @@ if [ $go = 1 ]; then
    echo "Starting $newver ..."
    /etc/init.d/helium_gateway start
    echo "Install completed, old $oldver saved at /usr/bin/helium_gateway.old"
+   echo "*** If Helium auto-update is enabled this update will be overwritten on the next update cycle ***"
 fi
